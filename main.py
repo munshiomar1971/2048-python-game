@@ -78,9 +78,9 @@ class Game(tk.Frame):
 		while(self.matrix[row][col] != 0):
 			row = random.randint(0, 3)
 			col = random.randint(0, 3)
-		self.matrix[row][col]= 2
-		self.cells[row][col]["frame"].configure(bg=c.CELL_COLORS[2])
-		self.cells[row][col]["number"].configure(
+			self.matrix[row][col]= 2
+			self.cells[row][col]["frame"].configure(bg=c.CELL_COLORS[2])
+			self.cells[row][col]["number"].configure(
 			bg=c.CELL_COLORS[2],
 			fg=c.CELL_NUM_COLORS[2],
 			font=c.CELL_NUM_FONTS[2],
@@ -162,6 +162,8 @@ class Game(tk.Frame):
 
 	# Arrow press Functions
 
+	# left arrow function
+
 	def left(self, event):
 		self.stack()
 		self.combine()
@@ -169,6 +171,8 @@ class Game(tk.Frame):
 		self.add_new_tile()
 		self.update_game()
 		self.game_over()
+
+	# right arrow function
 
 
 	def right(self, event):
@@ -181,8 +185,10 @@ class Game(tk.Frame):
 		self.update_game()
 		self.game_over()
 
+	# up arrow function
 
-	def down(self, event):
+
+	def up(self, event):
 		self.transpose()
 		self.stack()
 		self.combine()
@@ -191,8 +197,9 @@ class Game(tk.Frame):
 		self.update_game()
 		self.game_over()
 
+	# down arrow functions
 
-	def up(self, event):
+	def down(self, event):
 		self.transpose()
 		self.reverse()
 		self.stack()
